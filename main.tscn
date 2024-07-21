@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfyha8c13m258"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_wovxl"]
+[ext_resource type="PackedScene" uid="uid://ctd2tymclicwa" path="res://lobby.tscn" id="2_hd3w3"]
+[ext_resource type="PackedScene" uid="uid://j3nembuvoodu" path="res://server_browser.tscn" id="3_7tctw"]
+[ext_resource type="PackedScene" uid="uid://dgvoe3s50atcp" path="res://player_data.tscn" id="4_eeb2i"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wovxl")
+
+[node name="Lobby" parent="." node_paths=PackedStringArray("server_browser_node", "player_data") instance=ExtResource("2_hd3w3")]
+layout_mode = 1
+server_browser_node = NodePath("../ServerBrowser")
+player_data = NodePath("../PlayerData")
+
+[node name="ServerBrowser" parent="." node_paths=PackedStringArray("lobby_node", "player_data") instance=ExtResource("3_7tctw")]
+visible = false
+layout_mode = 1
+lobby_node = NodePath("../Lobby")
+player_data = NodePath("../PlayerData")
+
+[node name="PlayerData" parent="." instance=ExtResource("4_eeb2i")]

@@ -1,0 +1,165 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctd2tymclicwa"]
+
+[ext_resource type="Script" path="res://lobby.gd" id="1_rxmbo"]
+[ext_resource type="PackedScene" uid="uid://bji1cb7g5hcvx" path="res://gdmaster_client.tscn" id="2_vchcy"]
+[ext_resource type="PackedScene" uid="uid://dpfonc6j1nnsn" path="res://server_info_listener.tscn" id="4_nq7lu"]
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rxmbo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GdmasterPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/GdmasterPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/GdmasterPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gdmaster IP:"
+
+[node name="GdmasterIP" type="LineEdit" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "127.0.0.1"
+
+[node name="Label6" type="Label" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gdmaster PORT:"
+
+[node name="GdmasterPort" type="LineEdit" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "27777"
+
+[node name="Label" type="Label" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gamename:"
+
+[node name="GameName" type="LineEdit" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "RoboFlex"
+
+[node name="Label2" type="Label" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Protocol:"
+
+[node name="GameProtocol" type="LineEdit" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "4522"
+
+[node name="Label3" type="Label" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Max players:"
+
+[node name="MaxPlayers" type="LineEdit" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "16"
+
+[node name="PublicCheckBox" type="CheckBox" parent="HBoxContainer/GdmasterPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Public"
+
+[node name="GameInfoPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/GameInfoPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/GameInfoPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lobby name:"
+
+[node name="LobbyName" type="LineEdit" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "My first lobby"
+
+[node name="Label8" type="Label" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Player name:"
+
+[node name="PlayerName" type="LineEdit" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Player"
+
+[node name="Label4" type="Label" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game port:"
+
+[node name="GamePort" type="LineEdit" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "27800"
+
+[node name="Label6" type="Label" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Listener port:"
+
+[node name="ListenertPort" type="LineEdit" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "27900"
+
+[node name="DisconnectButton" type="Button" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Disconnect"
+
+[node name="HostGameButton" type="Button" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Host game"
+
+[node name="ServerBrowserButton" type="Button" parent="HBoxContainer/GameInfoPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Server 
+Browser"
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Players:"
+
+[node name="PlayerList" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="LobbyId" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "LobbyID"
+
+[node name="GdmasterClient" parent="." instance=ExtResource("2_vchcy")]
+
+[node name="ServerInfoListener" parent="." instance=ExtResource("4_nq7lu")]

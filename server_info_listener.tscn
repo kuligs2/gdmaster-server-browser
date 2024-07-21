@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpfonc6j1nnsn"]
+
+[ext_resource type="Script" path="res://server_info_listener.gd" id="1_28qcg"]
+
+[node name="ServerInfoListener" type="Node"]
+script = ExtResource("1_28qcg")

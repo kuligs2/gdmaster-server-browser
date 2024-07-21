@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu4k57l03q2tm"]
+
+[ext_resource type="Script" path="res://address_item.gd" id="1_h7o04"]
+[ext_resource type="PackedScene" uid="uid://8ps0uid84mes" path="res://server_info_requester.tscn" id="2_s528m"]
+
+[node name="AddressItem" type="HBoxContainer"]
+script = ExtResource("1_h7o04")
+
+[node name="LabelIP" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "255.255.255.255:44444
+"
+
+[node name="LabelLobby" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Lobby"
+
+[node name="LabelPlayers" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "1/16"
+
+[node name="LabelPing" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "44"
+
+[node name="ButtonJoin" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Join"
+
+[node name="ServerInfoRequester" parent="." instance=ExtResource("2_s528m")]
